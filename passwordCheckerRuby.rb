@@ -7,6 +7,7 @@ def validator()
   longEnough(userId, password)
   doesNotContainSpecial(userId)
   containsSpecial(password)
+  hasUpperAndLowerCase(password)
 end
 
 def same(userId, password)
@@ -47,5 +48,14 @@ def hasDigit(password)
       p false
     else
       p true
+  end
+end
+
+def hasUpperAndLowerCase(password)
+  ("A".."Z").each do |i|
+    if password.include?(i)
+      p true
+      exit
+    end
   end
 end

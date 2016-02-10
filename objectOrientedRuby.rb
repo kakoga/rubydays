@@ -59,22 +59,22 @@ class Car
 
     @lights = !@lights
     if @lights
-      p "The lights are on"
+      "The lights are on"
     else
-      p "The lights are off"
+      "The lights are off"
     end
 
   end
 
   def speed
-    puts @speed
+    @speed
   end
 
   # # Story: As a programmer, I can speed a car up.
 
 
   def accelerate
-    p @speed += 1
+    @speed += 1
   end
 
 
@@ -82,7 +82,7 @@ class Car
 
   def brake
     if @speed > 0
-      p @speed -= 1
+      @speed -= 1
     end
   end
 end
@@ -99,14 +99,14 @@ end
 
 class Tesla < Car
   def accelerate
-    p @speed += 10
+    @speed += 10
   end
 
   def brake
     if @speed - 7 < 0
-      p @speed = 0
+      @speed = 0
     elsif @speed >= 7
-      p @speed -= 7
+      @speed -= 7
     end
   end
 
@@ -138,14 +138,14 @@ garage.push(yourTesla)
 
 class Tata < Car
   def accelerate
-    p @speed += 2
+    @speed += 2
   end
 
   def brake
     if @speed - 1.25 < 0
-      p @speed = 0
+      @speed = 0
     elsif @speed >= 1.25
-      p @speed -= 1.25
+      @speed -= 1.25
     end
   end
 end
@@ -183,9 +183,9 @@ class Toyota < Car
 
   def brake
     if @speed - 5 < 0
-      p @speed = 0
+      @speed = 0
     elsif @speed >= 5
-      p @speed -= 5
+      @speed -= 5
     end
   end
 end
@@ -214,11 +214,10 @@ garage.push(yourToyota)
 
 # Story: As a programmer, I can sort my collection of cars based on model year.
 
-garage.sort_by {|x| puts x.model_year}
+p garage.sort_by! {|x| x.model_year}
 
 # Story: As a programmer, I can sort my collection of cars based on model.
 # Task: Sort based on class name.
-
-# garage.sort_by! {|x| puts x.make}
+p garage.collect!{|i| i.make}.sort
 
 # Story: As a programmer, I can sort my collection of cars based on model and then year.
